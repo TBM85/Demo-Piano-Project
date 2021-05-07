@@ -25,7 +25,8 @@ body {
   border: 1px solid rgba(32,32,32,0.2);
   cursor: pointer;
 }
-.key-title {
+.key-title,
+.key-letter {
   text-align: center;
 }
 .white {
