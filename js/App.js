@@ -105,14 +105,13 @@ const appearKeys = () => {
     keyTitle.classList.add('key-title');
     keyTitle.innerHTML = `${note.value}`;
 
-
     const audios = document.createElement('audio');
     audiosContainer.appendChild(audios);
     audios.setAttribute('data-key', `${note.data_type}`); 
     audios.setAttribute('src', `${note.sound}`); 
-  }
 
-  playNotes();  
+    playNotes();  
+  }
 }
 
 // This function makes possible to handle what happens when a click occurs or a key is pressed
@@ -121,7 +120,7 @@ const playNotes = () => {
   // This function plays the audio
   const playAudio = (audio) => {
     if(!audio) return; // stop the function from running all together
-    audio.currentTime = 0;
+    audio.currentTime = 0; // rewind to the start
     audio.play();
   }
 
@@ -129,6 +128,10 @@ const playNotes = () => {
   const keydownHandler = (e) => {
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
     playAudio(audio);
+
+    // This function adds a "playing" class each time a key is pressed
+    const keyDown = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+    keyDown.classList.add('playing');
   };
 
   document.addEventListener('keydown', keydownHandler);

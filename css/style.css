@@ -78,3 +78,11 @@ footer {
   text-align: center;
   width: 100%;
 }
+
+/* When a key is playing a note */
+.white.playing {
+  border-bottom: 0.2em solid #b3b3b3;
+}
+.playing {
+  box-shadow: none;
+}
