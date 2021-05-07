@@ -110,12 +110,12 @@ const appearKeys = () => {
     audios.setAttribute('data-key', `${note.data_type}`); 
     audios.setAttribute('src', `${note.sound}`); 
 
-    playNotes(key);  
+    playNotes(key, note);  
   }
 }
 
 // This function makes possible to handle what happens when a click occurs or a key is pressed
-const playNotes = (key) => {
+const playNotes = (key, note) => {
 
   // This function plays the audio
   const playAudio = (audio) => {
@@ -134,6 +134,15 @@ const playNotes = (key) => {
     keyDown.classList.add('playing');
   };
 
+  // This function handles what happens when a click occurs.
+  const clickHandler = () => {
+    const audio = document.querySelector(`audio[data-key="${note.data_type}"]`);  
+    playAudio(audio);
+
+    // This function adds a "playing" class each time a key is clicked
+    const keyClick = document.querySelector(`.key[data-key="${note.data_type}"]`);
+    keyClick.classList.add('playing');
+  }
 
   // If a transformation is not occurring, remove the "playing" class
   const removeTransition = (e) => {
@@ -142,8 +151,8 @@ const playNotes = (key) => {
   }
 
   document.addEventListener('keydown', keydownHandler);
+  key.addEventListener('click', clickHandler);
   const keys = document.querySelectorAll('.key');
-  // key.addEventListener('transitionend', removeTransition);
   keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 }
 
