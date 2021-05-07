@@ -90,18 +90,18 @@ const audiosContainer = document.querySelector('.audios');
 
 const appearKeys = () => {
   for (let note of notes) {
-    const keys = document.createElement('div');
-    keysContainer.appendChild(keys);
-    keys.classList.add('key', `${note.class}`);
-    keys.setAttribute('data-key', `${note.data_type}`);
+    const key = document.createElement('div');
+    keysContainer.appendChild(key);
+    key.classList.add('key', `${note.class}`);
+    key.setAttribute('data-key', `${note.data_type}`);
 
     const keyLetter = document. createElement('h3');
-    keys.appendChild(keyLetter);
+    key.appendChild(keyLetter);
     keyLetter.classList.add('key-letter');
     keyLetter.innerHTML = `${note.letter}`;
 
     const keyTitle = document.createElement('h4');
-    keys.appendChild(keyTitle);
+    key.appendChild(keyTitle);
     keyTitle.classList.add('key-title');
     keyTitle.innerHTML = `${note.value}`;
 
@@ -110,12 +110,12 @@ const appearKeys = () => {
     audios.setAttribute('data-key', `${note.data_type}`); 
     audios.setAttribute('src', `${note.sound}`); 
 
-    playNotes();  
+    playNotes(key);  
   }
 }
 
 // This function makes possible to handle what happens when a click occurs or a key is pressed
-const playNotes = () => {
+const playNotes = (key) => {
 
   // This function plays the audio
   const playAudio = (audio) => {
@@ -134,7 +134,17 @@ const playNotes = () => {
     keyDown.classList.add('playing');
   };
 
+
+  // If a transformation is not occurring, remove the "playing" class
+  const removeTransition = (e) => {
+    if (e.propertyName !== "transform") return; //skip it if it's not a transform
+    key.classList.remove('playing');
+  }
+
   document.addEventListener('keydown', keydownHandler);
+  const keys = document.querySelectorAll('.key');
+  // key.addEventListener('transitionend', removeTransition);
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 }
 
 appearKeys();
