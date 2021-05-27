@@ -1,84 +1,84 @@
 const notes = [
   {
     data_type: 68,
-    sound: "sounds/C.mp3",
+    sound: "assets/sounds/C.mp3",
     class: "white",
     value: "C",
     letter: "D"
   },
   {
     data_type: 82,
-    sound: "sounds/Cb.mp3",
+    sound: "assets/sounds/Cb.mp3",
     class: "black",
     value: "C#",
     letter: "R"
   },
   {
     data_type: 70,
-    sound: "sounds/D.mp3",
+    sound: "assets/sounds/D.mp3",
     class: "white",
     value: "D",
     letter: "F"
   },
   {
     data_type: 84,
-    sound: "sounds/Db.mp3",
+    sound: "assets/sounds/Db.mp3",
     class: "black",
     value: "D#",
     letter: "T"
   },
   {
     data_type: 71,
-    sound: "sounds/E.mp3",
+    sound: "assets/sounds/E.mp3",
     class: "white",
     value: "E",
     letter: "G"
   },
   {
     data_type: 72,
-    sound: "sounds/F.mp3",
+    sound: "assets/sounds/F.mp3",
     class: "white",
     value: "F",
     letter: "H"
   },
   {
     data_type: 85,
-    sound: "sounds/Fb.mp3",
+    sound: "assets/sounds/Fb.mp3",
     class: "black",
     value: "F#",
     letter: "U"
   },
   {
     data_type: 74,
-    sound: "sounds/G.mp3",
+    sound: "assets/sounds/G.mp3",
     class: "white",
     value: "G",
     letter: "J"
   },
   {
     data_type: 73,
-    sound: "sounds/Gb.mp3",
+    sound: "assets/sounds/Gb.mp3",
     class: "black",
     value: "G#",
     letter: "I"
   },
   {
     data_type: 75,
-    sound: "sounds/A.mp3",
+    sound: "assets/sounds/A.mp3",
     class: "white",
     value: "A",
     letter: "K"
   },
   {
     data_type: 79,
-    sound: "sounds/Ab.mp3",
+    sound: "assets/sounds/Ab.mp3",
     class: "black",
     value: "A#",
     letter: "O"
   },
   {
     data_type: 76,
-    sound: "sounds/B.mp3",
+    sound: "assets/sounds/B.mp3",
     class: "white",
     value: "B",
     letter: "L"
